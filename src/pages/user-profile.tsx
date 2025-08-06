@@ -68,7 +68,7 @@ export function UserProfile() {
         <motion.div variants={itemVariants}>
           <Card className="overflow-hidden border border-gray-200 shadow-lg">
             <CardHeader className="bg-gradient-to-r from-blue-900 to-blue-700 px-8 py-10 text-white">
-              <motion.div 
+              <motion.div
                 variants={itemVariants}
                 className="flex flex-col sm:flex-row items-start sm:items-center gap-8"
               >
@@ -80,14 +80,17 @@ export function UserProfile() {
                 </Avatar>
                 <div className="space-y-3">
                   <div className="flex items-center gap-4">
-                    <motion.h1 
+                    <motion.h1
                       variants={itemVariants}
                       className="text-4xl font-bold tracking-tight"
                     >
                       {admin.name}
                     </motion.h1>
                     <motion.div variants={itemVariants}>
-                      <Badge variant="secondary" className="text-sm px-4 py-1.5 bg-white text-blue-800">
+                      <Badge
+                        variant="default"
+                        className="text-sm px-4 py-1.5 bg-white text-blue-800"
+                      >
                         <Shield className="mr-2 h-4 w-4" />
                         {admin.role}
                       </Badge>
@@ -96,7 +99,10 @@ export function UserProfile() {
                   <motion.p variants={itemVariants} className="text-blue-100">
                     {admin.email}
                   </motion.p>
-                  <motion.p variants={itemVariants} className="text-sm text-blue-200">
+                  <motion.p
+                    variants={itemVariants}
+                    className="text-sm text-blue-200"
+                  >
                     {admin.joinDate}
                   </motion.p>
                 </div>
@@ -111,9 +117,7 @@ export function UserProfile() {
                     <h2 className="text-2xl font-semibold flex items-center gap-2">
                       <Settings className="w-6 h-6" /> Admin Overview
                     </h2>
-                    <p className="text-gray-700 leading-relaxed">
-                      {admin.bio}
-                    </p>
+                    <p className="text-gray-700 leading-relaxed">{admin.bio}</p>
                   </motion.section>
 
                   <Separator className="my-6" />
@@ -124,7 +128,7 @@ export function UserProfile() {
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                       {Object.entries(admin.stats).map(([key, value]) => (
-                        <motion.div 
+                        <motion.div
                           key={key}
                           variants={itemVariants}
                           whileHover={{ scale: 1.03 }}
@@ -134,7 +138,7 @@ export function UserProfile() {
                             {value}
                           </p>
                           <p className="text-sm text-gray-500 uppercase tracking-wider mt-1">
-                            {key.replace(/([A-Z])/g, ' $1').trim()}
+                            {key.replace(/([A-Z])/g, " $1").trim()}
                           </p>
                         </motion.div>
                       ))}
@@ -160,7 +164,9 @@ export function UserProfile() {
                           </div>
                           <div>
                             <p className="font-medium">{activity.action}</p>
-                            <p className="text-sm text-gray-500">{activity.time}</p>
+                            <p className="text-sm text-gray-500">
+                              {activity.time}
+                            </p>
                           </div>
                         </motion.div>
                       ))}
@@ -201,7 +207,9 @@ export function UserProfile() {
                       <motion.div variants={itemVariants} className="space-y-2">
                         <Label>Two-Factor Authentication</Label>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">Enabled (SMS + Authenticator)</span>
+                          <span className="text-sm text-gray-600">
+                            Enabled (SMS + Authenticator)
+                          </span>
                           <Button variant="outline" size="sm">
                             Manage
                           </Button>
@@ -210,7 +218,9 @@ export function UserProfile() {
                       <motion.div variants={itemVariants} className="space-y-2">
                         <Label>Session Management</Label>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">3 active sessions</span>
+                          <span className="text-sm text-gray-600">
+                            3 active sessions
+                          </span>
                           <Button variant="outline" size="sm">
                             View All
                           </Button>
@@ -219,7 +229,9 @@ export function UserProfile() {
                       <motion.div variants={itemVariants} className="space-y-2">
                         <Label>Password</Label>
                         <div className="flex items-center justify-between">
-                          <span className="text-sm text-gray-600">Last changed 30 days ago</span>
+                          <span className="text-sm text-gray-600">
+                            Last changed 30 days ago
+                          </span>
                           <Button variant="outline" size="sm">
                             Change
                           </Button>
