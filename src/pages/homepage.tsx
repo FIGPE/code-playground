@@ -3,9 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChartIcon, BrainIcon, ChevronLeftIcon, ChevronRightIcon, HandIcon, LockIcon } from 'lucide-react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Dashboard from './dashboard';
 
 // Main App Component
 const Homepage = () => {
+  const navigate = useNavigate();
+
+  const goTodashboard = () => navigate("/dashboard")
   const sectionsRef = {
     home: useRef(null),
     howItWorks: useRef(null),
@@ -36,6 +41,7 @@ const Homepage = () => {
             <a onClick={() => scrollToSection('traders')} className="text-sm font-medium transition-colors hover:text-primary cursor-pointer">Traders</a>
             <a onClick={() => scrollToSection('pricing')} className="text-sm font-medium transition-colors hover:text-primary cursor-pointer">Pricing</a>
             <a onClick={() => scrollToSection('faq')} className="text-sm font-medium transition-colors hover:text-primary cursor-pointer">FAQ</a>
+            <a onClick={goTodashboard} className='hover:bg-blue-100 p-1 rounded-[5px]' style={{cursor:'pointer'}}>Dashboard</a>
             <Button variant="ghost" className="text-sm font-medium">Sign In</Button>
             <Button>Sign Up</Button>
           </nav>
